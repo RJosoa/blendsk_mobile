@@ -1,0 +1,30 @@
+<div class="container mt-4">
+  <h2>Edit UserRole</h2>
+  <form (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <h3>User</h3>
+      <p>Name: {{ user?.username }}</p>
+      <p>Email: {{ user?.email }}</p>
+      <h5>Current Roles:</h5>
+      <div class="d-flex gap-3">
+        @for (role of userRoles; track role) {
+        <p>{{ role }}</p>
+        }
+      </div>
+
+      <select
+        class="form-select"
+        aria-label="Default select example"
+        [(ngModel)]="selectedRole"
+        name="selectedRole"
+        (change)="onRoleChange()"
+      >
+        <option disabled selected>{{ userRoles }}</option>
+
+        <option value="ROLE_ADMIN">ROLE_ADMIN</option>
+        <option value="ROLE_USER">ROLE_USER</option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Update</button>
+  </form>
+</div>

@@ -1,0 +1,36 @@
+<div class="position-absolute top-0 start-0 bottom-0 end-0 d-flex align-items-center justify-content-center p-3">
+    <div class="row justify-content-center w-100">
+      <div class="col-md-6 col-lg-4">
+        <h2 class="text-center mb-4">Connexion</h2>
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="flex flex-col gap-6">
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input
+              class="form-control"
+              id="email"
+              name="email"
+              type="email"
+              formControlName="email"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label">Mot de passe</label>
+            <input
+              class="form-control"
+              id="password"
+              name="password"
+              type="password"
+              formControlName="password"
+            />
+          </div>
+          <button
+            type="submit"
+            [disabled]="!loginForm.valid"
+            class="btn btn-primary w-100"
+          >
+            Se connecter
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>

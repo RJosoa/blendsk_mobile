@@ -1,0 +1,20 @@
+<div class="container mt-4">
+  <h2>Commentaires 2</h2>
+  @if (comments.length > 0) { @for (comment of comments; track comment.id) {
+  <div class="card mb-3">
+    <div class="card-body">
+      <h5 class="card-title">{{ comment.post.title }}</h5>
+      <h6 class="card-subtitle mb-2 text-muted">
+        Par {{ comment.user.username }}
+      </h6>
+      <p class="card-text">{{ comment.content }}</p>
+      <p class="text-muted">Créé le {{ comment.createdAt }}</p>
+      <button class="btn btn-danger btn-sm" (click)="deleteComment(comment.id)">
+        Supprimer
+      </button>
+    </div>
+  </div>
+  } } @else {
+  <p>Aucun commentaire disponible.</p>
+  }
+</div>

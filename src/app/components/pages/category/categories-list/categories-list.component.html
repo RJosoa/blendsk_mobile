@@ -1,0 +1,16 @@
+<div class="container mt-4">
+  <h2>List</h2>
+  @if (categories.length > 0) { @for (category of categories; track category.id)
+  {
+  <div class="card m-3">
+    <div class="card-body">
+      <p>{{ category.name }}</p>
+      <a href="/category/{{ category.id }}/edit" class="btn btn-primary"
+        >edit</a
+      >
+    </div>
+  </div>
+  } } @else {
+  <p>Aucun commentaire disponible.</p>
+  }
+</div>
